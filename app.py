@@ -1,17 +1,29 @@
-from flask import Flask
+from flask import Flask, request
 
-from database import connection
-from database import cursor
+from database.database import connection
+from database.database import cursor
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 
+@app.route("/users", methods=["POST"])
+def create_user():
+    body = request.json
+    # body -> cria o usuario
+    # ed_user = User(name='ed', fullname='Ed Jones', nickname='edsnickname')
+    # session.add(ed_user)
+
+
 @app.route("/users")
 def list_all():
     cursor.execute("SELECT * FROM aluno")
     lista_alunos = cursor.fetchall()
+    # "lista_alunos = [(1, nome_aluno, curso....) (2, nome_aluno_2, curso2...]"
+    # for aluno in lista_alunos:
+    #     # aluno.nome X
+    #     # aluno.curso X
     return {"lista": lista_alunos}, 200
 
 
