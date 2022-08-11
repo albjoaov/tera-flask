@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Alunos</title>
+</head>
+  <body>
+    <div>
+      <p>Contacts:</p>
+      <ul>
+        {% for nome in nome_alunos %}
+        <li>{{ nome }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

@@ -9,6 +9,3 @@ connection = psycopg2.connect(host=os.environ["DB_HOST"],
                               user=os.environ["DB_USER"],
                               password=os.environ["DB_PASS"],)
 cursor = connection.cursor()
-
-cursor.execute("CREATE TABLE aulas(id bigserial PRIMARY KEY, name varchar)")
-connection.commit()
