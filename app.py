@@ -1,8 +1,8 @@
 from flask import Flask, request
+from flask_cors import CORS
 
 from database.database import connection
 from database.database import cursor
-from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)

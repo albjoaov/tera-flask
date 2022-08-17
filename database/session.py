@@ -1,3 +1,7 @@
+# import sys
+#
+# sys.path.insert(0, "../")
+
 import os
 
 from dotenv import load_dotenv
@@ -13,7 +17,7 @@ DB_PASS = os.environ['DB_PASS']
 DB_NAME = os.environ['DB_NAME']
 
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}", echo=True)
-#
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
